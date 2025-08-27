@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TEST</title>
+        <link href="test.css" rel="stylesheet">
+        <!--<link href="img/anime_favicon.gif" rel="icon" type="images/png">アニメGIFのファビコンはFirefoxのみ対応-->
+        <!--きんかくじAdobeFontsテスト-->
+        <script>
+            (function(d) {
+              var config = {
+                kitId: 'ksr0dxu',
+                scriptTimeout: 3000,
+                async: true
+              },
+              h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+          </script>
+          <script>
+            // ページが閉じられる際の処理
+            window.onunload = function() {
+                alert("ページを離れます。");
+            };
+        </script>
+    </head>
+    <body>
+        <h1>onunloadイベントのデモ</h1>
+        <p>このページを閉じるか、他のページに移動するとアラートが表示されます。</p>
+        <div class="wrapper">
+            <div class="contents_wrapper">
+                <div class="moji_left">文字を回転：左に配置</div>
+                <div class="contents">真ん中コンテンツ</div>
+                <div class="moji_right">文字を回転：右に配置</div>
+            </div>
+        </div>
+        
+        <h2 class="underline">
+            Hタグの文字部分にだけ下線<span>（text-decorationではなく）</span>
+        </h2>
+        
+        <h2 class="disc mojiwaku_kinkaku">茶</h2>
+        <h2 class="disc adobe_kinkaku">茶</h2>
+        <h2 class="disc mojiwaku_kaisou">茶</h2>
+
+        <h2 class="mirror">爽健美茶</h2>
+
+        <h2><span class="mesh">リラックスジャスミンティー</span></h2>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1619.4137602695168!2d139.7056480258053!3d35.73046019155761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5bfe16aaab%3A0xc8eb1adfb8e40086!2sHANABAR%20Driedflowers%26Liquor!5e0!3m2!1sja!2sjp!4v1725944871105!5m2!1sja!2sjp" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <!--CSSだけで無限ループ→ただしコンテンツを２回書かないとできない-->
+        <div class="scroll-infinity">
+            <div class="scroll-infinity__wrap">
+              <ul class="scroll-infinity__list scroll-infinity__list--left">
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>                        
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+              </ul>
+              <ul class="scroll-infinity__list scroll-infinity__list--left">
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>                        
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+                <li class="scroll-infinity__item"><img src="https://rita-plus.com/wp-content/uploads/2023/03/23337543-300x200.png" /></li>
+              </ul>
+            </div>
+        </div>
+
+        <!--CSSだけでループ回数制限-->
+        <div id="slideshow">
+            <img src="https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_pro__6bgrkek0jnm2_xlarge.png" class="slide" alt="Slide 1">
+            <img src="https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_air__cr381zljqdiu_xlarge.png" class="slide" alt="Slide 2">
+            <img src="https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_10th_gen__ej5p5x6yf2gm_xlarge.png" class="slide" alt="Slide 3">
+        </div>
+
+        <div id="bgvideo">
+          <video src="img/IMG_1665.mp4" autoplay loop muted></video>
+        </div>
+
+        <form>
+          <select>
+            <option value="">選択してください</option>
+            <option value="1">東京都新宿区</option>
+            <option value="1">大阪府大阪市</option>
+            <option value="1">愛知県名古屋市</option>
+            <option value="1"></option>
+          </select>
+        </form>
+
+        <div id="blocktest">
+          <ul>
+            <li><a href="">リンク１</a></li>
+            <li><a href="">リンク２</a></li>
+            <li><a href="">リンク３</a></li>
+            <li><a href="">リンク４</a></li>
+          </ul>
+        </div>
+    </body>
+</html>

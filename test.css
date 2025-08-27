@@ -1,0 +1,237 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap');
+
+@font-face {
+    font-family: "ロック";
+    src: url("fonts/RocknRollOne-Regular.woff");
+}
+@font-face {
+    font-family: "きんかくじ";
+    src: url("fonts/kinkaku.woff") format("woff"),url("fonts/kinkaku.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "かいそう";
+    src: url("fonts/Kaisotai-Next-UP-B.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "UD教科書";
+    src: url(fonts/UDDigiKyokashoN-B.woff);
+}
+
+.wrapper {
+    margin: auto;
+    font-size: 16px;
+}
+.contents_wrapper {
+    width: 300px;
+    height: 300px;
+    display: table-cell;
+    background-color: #ccc;
+    transform: rotate(-90deg);/**/
+}
+.moji_box {
+  }
+.contents {
+    display: flex;
+    height:80%;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);/**/
+}
+.moji_left {
+    height:10%;
+    white-space: nowrap;
+    background-color: #99c;
+    text-align: center;
+}
+.moji_right {
+    height:10%;
+    background-color: #c99;
+    text-align: center;
+    transform: rotate(180deg);
+}
+h2.underline {
+    background-color: darkkhaki;
+    background-image: url(img/anime_favicon.gif);
+    background-size: 100% 100%;/*１つめ：幅、２つめ：高さ*/
+    text-align: center;
+}
+.underline span {
+    display: inline-block;
+    margin: 20px 0;
+    font-family: "ロック";
+    line-height: 1.2;
+    border-bottom: 1px solid #663300;
+}
+h2.disc {
+    display: inline-block;
+    background-color: #663300;
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+    font-size: 48px;
+    color: white;
+    line-height: 1;
+    border-radius: 50%;
+    text-align: center;
+}
+h2.mojiwaku_kinkaku {
+    font-family: "きんかくじ", serif;
+    font-weight: normal;
+    font-style: normal;
+}
+h2.adobe_kinkaku {
+    font-family: "kinkakuji", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+h2.mojiwaku_kaisou {
+    font-family: "かいそう", serif;
+    font-weight: normal;
+    font-style: normal;
+}
+h2.mirror {
+    display: block;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 72px;
+    font-weight: bold;
+    color: black;
+    line-height: 0.75;
+}
+h2.mirror::after {
+    content: "爽健美茶";
+    display: block;
+    background: linear-gradient(0deg,rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scaleY(-1);
+}
+
+span.mesh {
+    font-family: "Kaisei Opti", serif;
+    font-size: 56px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -1rem;
+    background-color: #faff99;
+    background-image: radial-gradient(at 99% 29%, hsla(192,89%,76%,1) 0px, transparent 50%),
+    radial-gradient(at 70% 68%, hsla(308,68%,71%,1) 0px, transparent 50%),
+    radial-gradient(at 10% 75%, hsla(189,72%,60%,1) 0px, transparent 50%),
+    radial-gradient(at 69% 20%, hsla(119,75%,72%,1) 0px, transparent 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+
+/* CSSのみで無限ループ→ただしHTMLでコンテンツを２回書かないとできない */
+@keyframes infinity-scroll-left {
+    from {
+      transform: translateX(0);
+    }
+      to {
+      transform: translateX(-100%);
+    }
+    }
+    .scroll-infinity__wrap {
+      display: flex;
+      overflow: hidden;
+    }
+    .scroll-infinity__list {
+      display: flex;
+      list-style: none;
+      padding: 0
+    }
+    .scroll-infinity__list--left {
+      animation: infinity-scroll-left 80s infinite linear 0.5s both;
+    }
+    .scroll-infinity__item {
+      width: calc(100vw / 6);
+    }
+    .scroll-infinity__item>img {
+      width: 100%;
+    }
+
+/* CSSだけでループ回数制限 */
+#slideshow {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+}
+#slideshow img {
+    width: auto;
+    height: 100%;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slideAnimation 9s ease-in-out infinite;
+}
+
+/* 各スライドのタイミングを設定 */
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 6s;
+}
+
+/* スライドが表示されるアニメーション */
+@keyframes slideAnimation {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33.33% { opacity: 1; }
+    43.33% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* 3回でアニメーションを止める */
+#slideshow {
+    animation: stopAnimation 27s linear forwards;
+}
+
+@keyframes stopAnimation {
+    0% { }
+    100% { animation-play-state: paused; }
+}
+
+#bgvideo video {
+    object-fit: cover;
+    object-position: center 75%;
+    opacity: var(--videi-opacity);
+    width: 800px;
+    height: 450px;
+}
+
+select {
+    width: 500px;
+}
+
+#blocktest {
+
+}
+#blocktest ul {
+    padding: 0;
+    list-style: none;
+}
+#blocktest ul li {
+    margin: 20px;
+    background-color: #99c;
+}
+
+#blocktest ul li a {
+    display: block;/**/
+    padding: 20px;
+    text-decoration: none;
+}
